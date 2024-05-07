@@ -516,7 +516,7 @@ offset_left = 292.0
 offset_top = 20.0
 offset_right = 396.0
 offset_bottom = 164.0
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 35
 vertical_alignment = 2
 
 [node name="PrimaryStatFirstType" type="Label" parent="PopupPanel/Popup/PrimaryStats"]
@@ -544,7 +544,7 @@ offset_left = 292.0
 offset_top = 220.0
 offset_right = 396.0
 offset_bottom = 292.0
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 35
 vertical_alignment = 2
 
 [node name="PrimaryStatSecondType" type="Label" parent="PopupPanel/Popup/PrimaryStats"]

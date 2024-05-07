@@ -10,11 +10,9 @@ var rarity
 var level
 var upgrade
 var value
-
-var texture_no = ""
-var equipped = ""
-var type = ""
-
+var texture_no
+var equipped
+var type
 var stats = {
 	"primary_stat_first": 0,
 	"primary_stat_second": 0,

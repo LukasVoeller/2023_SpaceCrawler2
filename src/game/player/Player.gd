@@ -10,7 +10,7 @@ var collected = []
 
 func _ready():
 	print("Instanced Player")
-	load_inventroy()
+	load_inventory()
 
 #func init(_name, _rar, _lvl, _upgr, _val, _tex_no, _equ, _type, _stats):
 func _on_Item_collected(item):
@@ -29,7 +29,7 @@ func _on_Item_collected(item):
 	item.queue_free()
 	
 	
-func save_inventroy():
+func save_inventory():
 	var save_game = FileAccess.open("user://saveinventory.save", FileAccess.WRITE)
 
 	# Save inventory
@@ -44,7 +44,7 @@ func save_inventroy():
 	save_game.close()
 
 
-func load_inventroy():
+func load_inventory():
 	var save_game = FileAccess.open("user://saveinventory.save", FileAccess.READ)
 	if not save_game:
 		return # Error! We don't have a save to load.
@@ -55,15 +55,12 @@ func load_inventroy():
 		var node_data = test_json_conv.get_data()
 
 		inventory.append(node_data)
-#		for i in node_data.keys():
-#			inventroy = node_data[i]
 
-	#print(inventroy)
 	save_game.close()
 	
 
 func save():
-	save_inventroy()
+	save_inventory()
 	
 	var save_dict = {
 		"filename" : "res://src/game/player/Player.tscn",

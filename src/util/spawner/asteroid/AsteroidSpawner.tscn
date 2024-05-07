@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://src/util/spawner/asteroid/AsteroidSpawner.gd" id="1"]
 
 [node name="AsteroidSpawner" type="Node2D"]
-position = Vector2(-64, -64)
 script = ExtResource("1")
 
 [node name="AsteroidTimer" type="Timer" parent="."]

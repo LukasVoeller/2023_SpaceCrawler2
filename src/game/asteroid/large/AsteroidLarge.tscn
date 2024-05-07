@@ -1,15 +1,15 @@
-[gd_scene load_steps=41 format=3 uid="uid://c3r7gxxkdecas"]
+[gd_scene load_steps=40 format=3 uid="uid://b73p4k0nmrvmx"]
 
-[ext_resource type="Texture2D" uid="uid://uc3rk788818f" path="res://assets/explosions/explosion_1.png" id="1"]
-[ext_resource type="Script" path="res://src/game/asteroid/Asteroid.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://qsqe6bvdetvu" path="res://assets/explosions/explosion_2.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://0d7iytht6ae3" path="res://assets/asteroids/asteroid_01.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://e3posa35vdg0" path="res://assets/ui/darkpixelrpg/buttons/special/button_diamond.png" id="5_lxck7"]
-[ext_resource type="Texture2D" uid="uid://djscjrlmtyfcf" path="res://assets/ui/darkpixelrpg/progress/frame/frame_197 × 15.png" id="5_pdkwx"]
-[ext_resource type="Texture2D" uid="uid://c00qxbvs0srrj" path="res://assets/ui/darkpixelrpg/progress/bars/red/progress_red.png" id="6_er3xl"]
-[ext_resource type="Script" path="res://src/game/asteroid/Level.gd" id="7"]
+[ext_resource type="Script" path="res://src/game/asteroid/large/AsteroidLarge.gd" id="1_jp7bp"]
+[ext_resource type="Texture2D" uid="uid://0d7iytht6ae3" path="res://assets/asteroids/asteroid_01.png" id="2_bvm5r"]
+[ext_resource type="Texture2D" uid="uid://uc3rk788818f" path="res://assets/explosions/explosion_1.png" id="3_gx5ks"]
+[ext_resource type="Texture2D" uid="uid://qsqe6bvdetvu" path="res://assets/explosions/explosion_2.png" id="4_pvf03"]
+[ext_resource type="Texture2D" uid="uid://djscjrlmtyfcf" path="res://assets/ui/darkpixelrpg/progress/frame/frame_197 × 15.png" id="5_8i8we"]
+[ext_resource type="Texture2D" uid="uid://c00qxbvs0srrj" path="res://assets/ui/darkpixelrpg/progress/bars/red/progress_red.png" id="6_irbei"]
+[ext_resource type="Texture2D" uid="uid://e3posa35vdg0" path="res://assets/ui/darkpixelrpg/buttons/special/button_diamond.png" id="7_ywmht"]
+[ext_resource type="Script" path="res://src/game/asteroid/Level.gd" id="8_ddk3i"]
 
-[sub_resource type="Shader" id="31"]
+[sub_resource type="Shader" id="Shader_u7lph"]
 code = "shader_type canvas_item;
 
 uniform float hit_opacity = 0;
@@ -19,111 +19,111 @@ void fragment(){
 	COLOR.a = texture(TEXTURE, UV).a;
 }"
 
-[sub_resource type="ShaderMaterial" id="32"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_io55j"]
 resource_local_to_scene = true
-shader = SubResource("31")
+shader = SubResource("Shader_u7lph")
 shader_parameter/hit_opacity = 0.0
 
-[sub_resource type="CircleShape2D" id="36"]
-radius = 96.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xamil"]
+radius = 128.25
 
 [sub_resource type="AtlasTexture" id="2"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="3"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="4"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="5"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="6"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(0, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="7"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(100, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="8"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(200, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="9"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(300, 100, 100, 100)
 
 [sub_resource type="AtlasTexture" id="10"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(0, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="11"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(100, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="12"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(200, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="13"]
-atlas = ExtResource("1")
+atlas = ExtResource("3_gx5ks")
 region = Rect2(300, 200, 100, 100)
 
 [sub_resource type="AtlasTexture" id="15"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="16"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(96, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="17"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(192, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="18"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(288, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="19"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(384, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="20"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(480, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="21"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(576, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="22"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(672, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="23"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(768, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="24"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(864, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="25"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(960, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="26"]
-atlas = ExtResource("3")
+atlas = ExtResource("4_pvf03")
 region = Rect2(1056, 0, 96, 96)
 
-[sub_resource type="SpriteFrames" id="27"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3o82v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -245,34 +245,31 @@ _data = {
 "flash_white": SubResource("29")
 }
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3t3ll"]
-polygon = PackedVector2Array(-64, -64, -0.2742, -96, 64, -64, 96, -1.24777, 64, 64, 0.198273, 96, -64, 64, -96, -0.460312)
-
-[node name="Asteroid" type="RigidBody2D"]
+[node name="AsteroidLarge" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 47
 gravity_scale = 0.0
 lock_rotation = true
-script = ExtResource("2")
+script = ExtResource("1_jp7bp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("32")
-position = Vector2(0, 9.53674e-07)
-scale = Vector2(5.64706, 6)
-texture = ExtResource("4")
+material = SubResource("ShaderMaterial_io55j")
+position = Vector2(-4.76837e-06, -1.90735e-06)
+scale = Vector2(7.52941, 8)
+texture = ExtResource("2_bvm5r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("36")
+shape = SubResource("CircleShape2D_xamil")
 
 [node name="ExplosionAnimation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
-sprite_frames = SubResource("27")
+scale = Vector2(2.66667, 2.66667)
+sprite_frames = SubResource("SpriteFrames_3o82v")
 animation = &"explosion_2"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-96, -96)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-128, -128)
+scale = Vector2(2, 2)
 rect = Rect2(0, 0, 128, 128)
 
 [node name="HitEffect" type="AnimationPlayer" parent="."]
@@ -284,47 +281,45 @@ libraries = {
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = -96.0
-offset_top = -96.0
-offset_right = 96.0
-offset_bottom = 96.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="TextureProgressBar" parent="Control"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.219
+anchor_top = 0.094
 anchor_right = 1.0
-offset_left = -160.0
-offset_top = 20.0
-offset_bottom = 36.0
+anchor_bottom = 0.156
+offset_left = -0.064003
+offset_top = -0.0640011
+offset_bottom = 0.0639992
 grow_horizontal = 0
 max_value = 0.0
 nine_patch_stretch = true
-texture_over = ExtResource("5_pdkwx")
-texture_progress = ExtResource("6_er3xl")
-texture_progress_offset = Vector2(-2, 0)
+texture_over = ExtResource("5_8i8we")
+texture_progress = ExtResource("6_irbei")
+metadata/_edit_use_anchors_ = true
 
 [node name="Level" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_right = 56.0
-offset_bottom = 56.0
-texture = ExtResource("5_lxck7")
+layout_mode = 1
+anchors_preset = -1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("7_ywmht")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control/Level"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 57.0
-offset_bottom = 57.0
+layout_mode = 1
+anchors_preset = -1
+offset_right = 64.0
+offset_bottom = 64.0
 theme_override_font_sizes/font_size = 20
 text = "99"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
-occluder = SubResource("OccluderPolygon2D_3t3ll")
-
-[connection signal="animation_finished" from="ExplosionAnimation" to="." method="_on_ExplosionAnimation_animation_finished"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+script = ExtResource("8_ddk3i")
+metadata/_edit_use_anchors_ = true

@@ -173,7 +173,7 @@ text = "Inventory"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AbilitiesButton" type="TextureButton" parent="Control/HangarBar"]
+[node name="SkillsButton" type="TextureButton" parent="Control/HangarBar"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -190,13 +190,13 @@ texture_normal = ExtResource("5_uk2rt")
 texture_pressed = ExtResource("6_jqgfp")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Control/HangarBar/AbilitiesButton"]
+[node name="Label" type="Label" parent="Control/HangarBar/SkillsButton"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 160.0
 theme_override_fonts/font = ExtResource("7_0noof")
 theme_override_font_sizes/font_size = 48
-text = "Abilities"
+text = "Skills"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -338,8 +338,9 @@ texture_normal = ExtResource("9_woahm")
 texture_pressed = ExtResource("10_i84ij")
 stretch_mode = 0
 
-[connection signal="timeout" from="AnimationTimer" to="." method="_on_AnimationTimer_timeout"]
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_AnimationTimerLeft_timeout"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_AnimationTimer_timeout"]
 [connection signal="pressed" from="Control/HangarBar/InventroyButton" to="." method="_on_inventroy_button_pressed"]
+[connection signal="pressed" from="Control/HangarBar/SkillsButton" to="." method="_on_skills_button_pressed"]
 [connection signal="pressed" from="Control/HangarBar/QuestsButton" to="." method="_on_quests_button_pressed"]
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

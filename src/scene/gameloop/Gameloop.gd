@@ -1,7 +1,7 @@
 extends Node2D
 
 const Spaceship = preload("res://src/game/spaceship/Spaceship.tscn")
-const Asteroid = preload("res://src/game/asteroid/Asteroid.tscn")
+#const Asteroid = preload("res://src/game/asteroid/Asteroid.tscn")
 const Powerup = preload("res://src/game/powerup/Powerup.tscn")
 const Player = preload("res://src/game/player/Player.tscn")
 const ExpText = preload("res://src/util/text/exp_text/ExpText.tscn")
@@ -50,8 +50,8 @@ func connect_listeners():
 func init_ui():
 	$Control.z_index = 20
 	
-	$AsteroidSpawner.position.y -= 1425
-	$AsteroidSpawner.position.x -= 25
+	$AsteroidSpawner.position.y -= 1300
+	#$AsteroidSpawner.position.x -= 25
 	
 	$Control/SkillBar/ExpBar/Level/LevelText.text = str($Spaceship.level)
 	$Control/SkillBar/ExpBar/ExpBar.max_value = $Spaceship.exp_max

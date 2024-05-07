@@ -1,11 +1,5 @@
-#extends Node2D
 extends "res://src/game/item/Item.gd"
 
-#class_name ItemDisplay
-#const Tooltip = preload("res://src/util/tooltips/Tooltip.tscn")
-
-var rng = RandomNumberGenerator.new()
-#var popup_hidden = false
 var tap_count := 1
 var timer = Timer.new()
 

@@ -1,0 +1,245 @@
+[gd_scene load_steps=10 format=3 uid="uid://ueic2qanfd3y"]
+
+[ext_resource type="Script" path="res://src/scene/skills/Skills.gd" id="1_315sq"]
+[ext_resource type="Texture2D" uid="uid://cej042o468ur2" path="res://assets/ui/darkpixelrpg/bars/frame_0.png" id="2_0kyyv"]
+[ext_resource type="Texture2D" uid="uid://dfncgawj3sb0y" path="res://assets/ui/darkpixelrpg/buttons/rect-h/oliv/button_oliv_2.png" id="2_4htwr"]
+[ext_resource type="Texture2D" uid="uid://cj8eq5v0valj8" path="res://assets/ui/darkpixelrpg/decors/patterns/pattern_h_cross.png" id="2_6flwe"]
+[ext_resource type="FontFile" uid="uid://bi1dwkkedk1oh" path="res://assets/fonts/PixelSplitter-Bold.ttf" id="3_1841x"]
+[ext_resource type="Texture2D" uid="uid://clho87buywojd" path="res://assets/ui/darkpixelrpg/buttons/rect-h/oliv/button_oliv_2_pressed.png" id="3_i5de7"]
+[ext_resource type="Texture2D" uid="uid://q3ockqnj1m3k" path="res://assets/ui/darkpixelrpg/bars/frame_4_241 × 144.png" id="4_no8ha"]
+[ext_resource type="Texture2D" uid="uid://pjtvdnyblc7d" path="res://assets/ui/darkpixelrpg/buttons/square/button_arrow_left.png" id="5_u5vbp"]
+[ext_resource type="Texture2D" uid="uid://dun4llbklmvdj" path="res://assets/ui/darkpixelrpg/buttons/square/button_arrow_left_pressed.png" id="6_660d3"]
+
+[node name="Skills" type="Node2D"]
+script = ExtResource("1_315sq")
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 2048.0
+
+[node name="Typeselector" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 256.0
+grow_horizontal = 2
+texture = ExtResource("2_6flwe")
+
+[node name="Offensive" type="TextureButton" parent="Control/Typeselector"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 336.0
+offset_bottom = 160.0
+texture_normal = ExtResource("2_4htwr")
+texture_pressed = ExtResource("3_i5de7")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Typeselector/Offensive"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 280.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 28
+text = "Assault"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Typeselector/Offensive"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 288.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 28
+text = "(24)"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Defensive" type="TextureButton" parent="Control/Typeselector"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 32.0
+offset_right = 672.0
+offset_bottom = 160.0
+texture_normal = ExtResource("2_4htwr")
+texture_pressed = ExtResource("3_i5de7")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Typeselector/Defensive"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 280.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 28
+text = "Fortify"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Typeselector/Defensive"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 288.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 28
+text = "(13)"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Ultimative" type="TextureButton" parent="Control/Typeselector"]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 32.0
+offset_right = 1008.0
+offset_bottom = 160.0
+texture_normal = ExtResource("2_4htwr")
+texture_pressed = ExtResource("3_i5de7")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Typeselector/Ultimative"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 280.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 28
+text = "Unyield"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Typeselector/Ultimative"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 288.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 28
+text = "(23)"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -768.0
+offset_right = 512.0
+offset_bottom = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0kyyv")
+stretch_mode = 5
+
+[node name="Heading" type="Label" parent="Control/Background"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 960.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("3_1841x")
+theme_override_font_sizes/font_size = 40
+text = "Skills"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Offensive" type="ScrollContainer" parent="Control/Background"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 184.0
+offset_right = 1000.0
+offset_bottom = 1104.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/Offensive"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Defensive" type="ScrollContainer" parent="Control/Background"]
+visible = false
+layout_mode = 0
+offset_left = 112.0
+offset_top = 184.0
+offset_right = 1000.0
+offset_bottom = 1104.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/Defensive"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Ultimative" type="ScrollContainer" parent="Control/Background"]
+visible = false
+layout_mode = 0
+offset_left = 112.0
+offset_top = 184.0
+offset_right = 1000.0
+offset_bottom = 1104.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/Ultimative"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Details" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -576.0
+offset_right = 512.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_no8ha")
+
+[node name="SkillTitle" type="Label" parent="Control/Details"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 56
+text = "none"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillInfo" type="Label" parent="Control/Details"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 960.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 36
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -192.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_u5vbp")
+texture_pressed = ExtResource("6_660d3")
+stretch_mode = 0
+
+[connection signal="pressed" from="Control/Typeselector/Offensive" to="." method="_on_offensive_pressed"]
+[connection signal="pressed" from="Control/Typeselector/Defensive" to="." method="_on_defensive_pressed"]
+[connection signal="pressed" from="Control/Typeselector/Ultimative" to="." method="_on_ultimative_pressed"]
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

@@ -2,8 +2,9 @@ extends Area2D
 
 var overlapping_asteroids = 0
 
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 func _on_Node2D_body_entered(body):

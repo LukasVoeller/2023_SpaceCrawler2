@@ -1,0 +1,325 @@
+[gd_scene load_steps=40 format=3 uid="uid://dxbuwkcxyl2vq"]
+
+[ext_resource type="Script" path="res://src/game/asteroid/medium/AsteroidMedium.gd" id="1_yy58v"]
+[ext_resource type="Texture2D" uid="uid://dixyiverisc68" path="res://assets/asteroids/asteroid_02.png" id="2_6knhh"]
+[ext_resource type="Texture2D" uid="uid://uc3rk788818f" path="res://assets/explosions/explosion_1.png" id="3_ygckv"]
+[ext_resource type="Texture2D" uid="uid://qsqe6bvdetvu" path="res://assets/explosions/explosion_2.png" id="4_8vvjo"]
+[ext_resource type="Texture2D" uid="uid://djscjrlmtyfcf" path="res://assets/ui/darkpixelrpg/progress/frame/frame_197 × 15.png" id="5_lw661"]
+[ext_resource type="Texture2D" uid="uid://c00qxbvs0srrj" path="res://assets/ui/darkpixelrpg/progress/bars/red/progress_red.png" id="6_0srd0"]
+[ext_resource type="Texture2D" uid="uid://e3posa35vdg0" path="res://assets/ui/darkpixelrpg/buttons/special/button_diamond.png" id="7_lqyph"]
+[ext_resource type="Script" path="res://src/game/asteroid/Level.gd" id="8_jv2bw"]
+
+[sub_resource type="Shader" id="Shader_u4kfx"]
+code = "shader_type canvas_item;
+
+uniform float hit_opacity = 0;
+
+void fragment(){
+	COLOR.rgb = texture(TEXTURE, UV).rgb * (1.0 - hit_opacity) + vec3(1, 1, 1) * hit_opacity;
+	COLOR.a = texture(TEXTURE, UV).a;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oluom"]
+resource_local_to_scene = true
+shader = SubResource("Shader_u4kfx")
+shader_parameter/hit_opacity = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cn00q"]
+radius = 96.0
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="6"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="7"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="8"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="9"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(300, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="10"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(0, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="11"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(100, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="12"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(200, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="13"]
+atlas = ExtResource("3_ygckv")
+region = Rect2(300, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="15"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="16"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="17"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="18"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="19"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="20"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="21"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="22"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="23"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="24"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="25"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="26"]
+atlas = ExtResource("4_8vvjo")
+region = Rect2(1056, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyufq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}, {
+"duration": 1.0,
+"texture": SubResource("5")
+}, {
+"duration": 1.0,
+"texture": SubResource("6")
+}, {
+"duration": 1.0,
+"texture": SubResource("7")
+}, {
+"duration": 1.0,
+"texture": SubResource("8")
+}, {
+"duration": 1.0,
+"texture": SubResource("9")
+}, {
+"duration": 1.0,
+"texture": SubResource("10")
+}, {
+"duration": 1.0,
+"texture": SubResource("11")
+}, {
+"duration": 1.0,
+"texture": SubResource("12")
+}, {
+"duration": 1.0,
+"texture": SubResource("13")
+}],
+"loop": false,
+"name": &"explosion_1",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("15")
+}, {
+"duration": 1.0,
+"texture": SubResource("16")
+}, {
+"duration": 1.0,
+"texture": SubResource("17")
+}, {
+"duration": 1.0,
+"texture": SubResource("18")
+}, {
+"duration": 1.0,
+"texture": SubResource("19")
+}, {
+"duration": 1.0,
+"texture": SubResource("20")
+}, {
+"duration": 1.0,
+"texture": SubResource("21")
+}, {
+"duration": 1.0,
+"texture": SubResource("22")
+}, {
+"duration": 1.0,
+"texture": SubResource("23")
+}, {
+"duration": 1.0,
+"texture": SubResource("24")
+}, {
+"duration": 1.0,
+"texture": SubResource("25")
+}, {
+"duration": 1.0,
+"texture": SubResource("26")
+}],
+"loop": false,
+"name": &"explosion_2",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_param/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="29"]
+resource_name = "flash_white"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_param/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8271d"]
+_data = {
+"RESET": SubResource("28"),
+"flash_white": SubResource("29")
+}
+
+[node name="AsteroidMedium" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 47
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_yy58v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_oluom")
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(5.64706, 6)
+texture = ExtResource("2_6knhh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cn00q")
+
+[node name="ExplosionAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_kyufq")
+animation = &"explosion_2"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-96, -96)
+scale = Vector2(1.5, 1.5)
+rect = Rect2(0, 0, 128, 128)
+
+[node name="HitEffect" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8271d")
+}
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = 96.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.292
+anchor_top = 0.125
+anchor_right = 1.0
+anchor_bottom = 0.208
+offset_left = -0.064003
+offset_bottom = 0.0639992
+grow_horizontal = 0
+max_value = 0.0
+nine_patch_stretch = true
+texture_over = ExtResource("5_lw661")
+texture_progress = ExtResource("6_0srd0")
+texture_progress_offset = Vector2(-2, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("7_lqyph")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/Level"]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 20
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_jv2bw")
+metadata/_edit_use_anchors_ = true

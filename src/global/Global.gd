@@ -4,7 +4,7 @@ var rng = RandomNumberGenerator.new()
 
 ########## ASTEROID SETTINGS ##########
 var asteroid_level = 1
-var asteroid_timer = 0.5
+var asteroid_timer = 0.1
 var asteroid_velocity_x_min = -50
 var asteroid_velocity_x_max = 50
 var asteroid_velocity_y_min = 300

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://7uwfstgj86ab"]
+
+[ext_resource type="Script" path="res://src/scene/skills/SkillBlank.gd" id="1_551w0"]
+[ext_resource type="Texture2D" uid="uid://cmc87c0m1y0pw" path="res://assets/ui/darkpixelrpg/icons/inventory/icon_plain_frame.png" id="2_nfqgd"]
+
+[node name="SkillBlank" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 192.0
+script = ExtResource("1_551w0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 192.0
+offset_bottom = 192.0
+texture = ExtResource("2_nfqgd")
+stretch_mode = 5

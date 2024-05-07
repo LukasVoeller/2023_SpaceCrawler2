@@ -121,3 +121,7 @@ func _on_inventroy_button_pressed():
 
 func _on_quests_button_pressed():
 	get_tree().change_scene_to_file("res://src/scene/quests/Quests.tscn")
+
+
+func _on_skills_button_pressed():
+	get_tree().change_scene_to_file("res://src/scene/skills/Skills.tscn")
